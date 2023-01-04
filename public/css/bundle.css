@@ -1,0 +1,254 @@
+/* 
+/ Page: *
+/ Project: QR Menu Tbilisi Tower 
+/ --------------------------
+/ Creator:  Sharia.Design 👽
+/ Web: https://Sharia.Design/ 💻
+/ year: 2022 ⏳
+*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --brandPrimary: #2E5390;
+    --bg1: #F6F6F4;
+    --bg2: #EFEFE9;
+    --textDark: #2D2829;
+    --textMedium: #5E625D;
+    --textLight: #5E625D;
+    --borderLight: #c4cbc3;
+    --chaob: #6A888D;
+
+    /* FX */
+    --dur: 0.38s;
+    --bzr: cubic-bezier(.11, .69, 1, 1.01);
+    --cardShadow: 0px 4px 22px rgba(52, 58, 53, 0.11);
+    /* --- Calculation */
+    --screen-width: 83%;
+    --screen-padding: calc(100%-var(--screen-width) / 2);
+    --mob-width: 94%;
+    --mob-padding: calc(100%-var(--mob-width) / 2);
+}
+
+@font-face {
+    font-family: "bebas";
+    src: url("../fonts/bebas-neue-regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'mrglovani';
+    src: url('../fonts/BPGMrgvlovani2010.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 146%;
+    scroll-behavior: smooth;
+    background: var(--bg1);
+    color: var(--textDark);
+    font-family: bebas, mrglovani, system-ui;
+    font-weight: normal;
+    font-style: normal;
+    font-feature-settings: 'kern';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/*** Scroll Bar ***/
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--bg2);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--textLight);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+/*** Selection ***/
+::-moz-selection {
+    color: var(--bg1);
+    background: var(--chaob);
+}
+
+::selection {
+    color: var(--bg1);
+    background: var(--chaob);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: bebas, mrglovani, system-ui;
+}
+
+/*** Glboal Vars  ***/
+.trans {
+    transition: var(--dur) var(--bzr);
+    -webkit-transition: var(--dur) var(--bzr);
+    -moz-transition: var(--dur) var(--bzr);
+    -ms-transition: var(--dur) var(--bzr);
+    -o-transition: var(--dur) var(--bzr);
+}
+
+.fx-active {
+    will-change: transform;
+}
+
+.fx-active:active {
+    opacity: 1;
+    transform: scale(.95);
+}
+
+.wrap-69 {
+    margin: 0 auto;
+    padding: 0 69px;
+}
+
+.wrap-12 {
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 83%;
+}
+
+/* --- Global Styles --- */
+
+/* Classes */
+.none {
+    display: none !important;
+}
+
+.hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(52, 58, 53, 0.69);
+    width: 100vw;
+    height: 100vh;
+    z-index: 11;
+}
+
+
+
+
+/* Responsive */
+@media all and (max-width: 640px) {
+    .menu-list {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        width: 100% !important;
+    }
+
+    .detail {
+        width: 98% !important;
+    }
+
+    .lang-drop {
+        width: 92% !important;
+    }
+
+    .search {
+        width: 220px !important;
+    }
+    .sticky-head {
+        padding: 8px 12px 8px 12px;
+    }
+    .sticky-head {
+        padding-top: 29px !important;
+        flex-direction: column;
+        gap: 11px !important;
+    }
+    .search-form {
+        width: calc(100% - 22px) !important;
+    }
+    .headline {
+        gap: 11px !important;
+        align-items: center !important;;
+    }
+    
+    .sticky-head.fix .headline {
+        display: none;
+    }
+    .sticky-head.fix .category-tabs--container {
+        margin: 0 auto !important;
+        padding: 0 12px !important;
+    }
+    .sticky-head.fix .search-form {
+        margin: 0 auto 11px auto !important;;
+    }
+    .search {
+        width: 100% !important;
+    }
+}
+
+@media all and (min-width: 641px) and (max-width: 920px) {
+    .menu-item {
+        width: calc(50% - 12px) !important;
+    }
+
+    .detail {
+        width: 74% !important;
+    }
+}
+
+@media all and (min-width: 1400px) {
+    .menu-item {
+        width: calc(25% - 24px) !important;
+    }
+
+    .detail {
+        width: 38% !important;
+    }
+}
